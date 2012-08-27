@@ -7,8 +7,4 @@ Author: Brad Parbs
 Author URI: http://bradparbs.com/
 */
 
-add_filter('oembed_providers','bp_imgur_oembeds');
-function bp_imgur_oembeds($a) {
-	$a['#https?://i.imgur.com.*#i'] = array( 'http://api.imgur.com/oembed?url=/', true);
-	return $a;
-}
+wp_oembed_add_provider('#https?://i.imgur.com.*#i','http://api.imgur.com/oembed?url=/');
